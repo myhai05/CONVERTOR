@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor</title>
+</head>
+<body style="background-color: antiquewhite;">
+        <h1 style="display: flex; justify-content: center;">CONVERTER</h1>
+        <div style="display: flex; justify-content: center;">
+          <table>
+            <tr><td>Celsius :</td><td><input type="number" id="celsius" placeholder="Enter Celsius..." onchange="convertCelsius()"></td><td>C</td></td></tr>
+            <tr><td>Fahrenheit :</td><td><input type="number" id="fahrenheit"  placeholder="Enter Fahrenheit..." onchange="convertFahrenheit()"></td><td>F</td></td></tr>
+            <tr><td>Kelvin :</td><td><input type="number" id="kelvin"  placeholder="Enter Kelvin..." onchange="convertKelvin()"></td><td>K</td></td></tr>
+            <tr><td>Rankine :</td><td><input type="number" id="rankine"  placeholder="Enter Rankine..." onchange="convertRankine()"></td><td>R</td></td></tr>
+          </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style="display: flex; justify-content: center;">
+            <table>
+                <tr><td>Celsius :</td><td><input type="range" id="c" min="" max="" value=""></td><td><input type="" placeholder="" id="ce" disabled></td></tr>
+                <tr><td>Fahrenheit :</td><td><input type="range" id="f" min="-10000" max="1000000" value="0"></td><td><input type="" placeholder="" id="fa" disabled></td></tr>
+                <tr><td>Kelvin :</td><td><input type="range" id="k" min="0" max="100" value="0"></td><td><input type="" placeholder="" id="ke" disabled></td></tr>
+                <tr><td>Rankine :</td><td><input type="range" id="r" min="0" max="100" value="0"></td><td><input type="" placeholder="" id="ra" disabled></td></tr>
+            </table>
+        </div>
+        <script>
+            function convertCelsius(){
+           let c = parseFloat(document.getElementById("celsius").value);
+             
+            let  f = c * 9/5 + 32;
+            let  k = c + 273.15;
+            let  r = c * 9/5 + 491.67; 
+        
+              document.getElementById("fahrenheit").value = f.toFixed(2);
+              document.getElementById("kelvin").value = k.toFixed(2);
+              document.getElementById("rankine").value = r.toFixed(2)
+        
+              document.getElementById("ce").value = c;
+              document.getElementById("fa").value = f.toFixed(2);
+              document.getElementById("ke").value = k.toFixed(2);
+              document.getElementById("ra").value = r.toFixed(2);
+        
+              document.getElementById("c").value = c;
+              document.getElementById("f").value = f;
+              document.getElementById("k").value = k;
+              document.getElementById("r").value = r;
+        
+        
+            }
+            function convertFahrenheit(){
+                let f = parseFloat(document.getElementById("fahrenheit").value);
+        
+               let c = (f-32) * 5/9;
+               let k =(f + 459.67) * 5/9;
+               let r = f + 459.67;
+               
+               document.getElementById("celsius").value = c.toFixed(2);
+               document.getElementById("kelvin").value = k.toFixed(2);
+               document.getElementById("rankine").value = r.toFixed(2);
+               
+               document.getElementById("ce").value = c.toFixed(2);
+               document.getElementById("fa").value = f;      
+               document.getElementById("ke").value = k.toFixed(2);
+               document.getElementById("ra").value = r.toFixed(2);
+        
+               document.getElementById("c").value = c;
+               document.getElementById("f").value = f;
+               document.getElementById("k").value = k;
+               document.getElementById("r").value = r;
+            }
+            function convertKelvin(){
+                let k = parseFloat(document.getElementById("kelvin").value);
+        
+               let c = k- 273.15;
+               let f = 9/5 * k - 459.67;
+               let r = f + 459.67;
+               
+               document.getElementById("celsius").value = c.toFixed(2);
+               document.getElementById("fahrenheit").value = f.toFixed(2);
+               document.getElementById("rankine").value = r.toFixed(2);
+               
+               document.getElementById("ce").value = c.toFixed(2);
+               document.getElementById("fa").value = f.toFixed(2);      
+               document.getElementById("ke").value = k;
+               document.getElementById("ra").value = r.toFixed(2);
+        
+               document.getElementById("c").value = c;
+               document.getElementById("f").value = f;
+               document.getElementById("k").value = k;
+               document.getElementById("r").value = r;
+            }
+            function convertRankine(){
+                let r = parseFloat(document.getElementById("rankine").value);
+        
+               let c = (r-491.67)*5/9;
+               let f = r - 459.67;
+               let k = (r - 491.67)*5/9 + 273.15;
+               
+               document.getElementById("celsius").value = c.toFixed(2);
+               document.getElementById("fahrenheit").value = f.toFixed(2);
+               document.getElementById("kelvin").value = k.toFixed(2);
+               
+               document.getElementById("ce").value = c.toFixed(2);
+               document.getElementById("fa").value = f.toFixed(2);      
+               document.getElementById("ke").value = k.toFixed(2);
+               document.getElementById("ra").value = r;
+        
+               document.getElementById("c").value = c;
+               document.getElementById("f").value = f;
+               document.getElementById("k").value = k;
+               document.getElementById("r").value = r;
+            }
+        </script>
+    
+</body>
+</html>
